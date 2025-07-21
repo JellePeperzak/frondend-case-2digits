@@ -1,0 +1,66 @@
+--- BLOG ---
+    _id
+    title
+    _publish_on
+    _slug
+    categories {
+        _id
+        body
+        slug
+    }
+    content {
+        _id
+        html
+    }
+    banner_image {
+        _id
+        height
+        width
+        url
+    }
+
+--- BLOGS ---
+    items {
+        ...anything you want from the BLOG object
+    }
+
+--- PAGE ---
+    _id
+    title
+    _slug
+    html
+    page_header {
+        _id
+        title
+        text (heeft niet altijd content)
+        image {
+            _id
+            height
+            width
+            url
+        }
+    }
+
+--- PAGES ---
+    items {
+        ...anything you want from the PAGE object
+    }
+
+--- MENUITEM ---
+    _id
+    title
+    link_to_page {
+        ...anything you want from the PAGE object
+    }
+
+--- NAVIGATION ---
+Note that there are two navigation objects:
+- header, which contains the Home and Blog pages as items
+- footer, which contains the privacy and terms and conditions pages as items
+
+    _id
+    title
+    _slug
+    items {
+        ...anything you want from the PAGE object
+    }

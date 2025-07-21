@@ -1,0 +1,27 @@
+HOW TO USE THE PREPR API
+- It seems that I can build queries by defining them in .graphql files in server\prepr\schemas
+- Every query in such a .graphql file is named by assigning a name after 'query'.
+    - e.g. the query below is called Example.
+        query Example {
+            Page(slug: "/") {
+                page_header {
+                    title
+                }
+            }
+        }
+
+- These queries can be accessed in a .tsx file by importing PreprSdk, using the code:
+    - import { PreprSdk } from '@/server/prepr';
+- Then, within the page function, you can assign the query result to a variable:
+    - e.g. const { Page } = await PreprSdk.Example();
+- MAKE SURE THAT THE PAGE FUNCTION IS AN ASYNC FUNCTION
+    - e.g. export default async function Home() 
+
+- Finally, the query results can be accessed by using the relevant properties of the variable 
+that stores them.
+    - e.g. {Page?.page_header?.title}
+
+
+
+
+  
