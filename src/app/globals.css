@@ -2,28 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
-}
+/*
+  --- COLOR CODES ---
+    - background: #FFFFFF / white
+    - footer: linear gradient #2B1E57 -> #141414 
+    - text (black): #141414
+    - text (purple): #762BFF
+    - blog category card: rgb(233, 235, 243)
+    - search bar section background: rgb(233, 235, 243)
+    - search bar border: rgb(211, 211, 211)
+    - blog category selector border: rgb(237, 237, 237)
+    - selected blog category background: #762BFF
+    - page number block (below blog grid): rgb(42, 32, 85)
+*/
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+* {
+  box-sizing: border-box;
 }

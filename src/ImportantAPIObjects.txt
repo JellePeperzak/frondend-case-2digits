@@ -64,3 +64,11 @@ Note that there are two navigation objects:
     items {
         ...anything you want from the PAGE object
     }
+
+
+
+--- IDS ---
+    - PAGE: Home ("597d4a8e-baaa-4e5a-8712-7ebc55314e11")
+    - PAGE: Blog ("3837c994-0641-410f-bad5-c907db5f35a8")
+    - PAGE: Terms and Conditions ("91cf676e-7d9f-45f5-95b4-dc6f6b183b8f")
+    - PAGE: Privacy Statement ("732f4909-ba5c-4fce-a11f-b627bac0db60")

@@ -1,0 +1,10 @@
+query NavFooter {
+  Navigation(slug: "footer") {
+    items {
+      link_to_page {
+        title
+        _slug
+      }
+    }
+  }
+}

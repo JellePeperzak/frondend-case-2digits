@@ -1,0 +1,10 @@
+query NavBlog {
+  MenuItem(id: "335bd03e-5b02-4db1-a640-27e5ae06fa52") {
+    _id
+    title
+    link_to_page {
+      title
+      _slug
+    }
+  }
+}

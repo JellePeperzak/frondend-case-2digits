@@ -1,0 +1,14 @@
+query PageHome {
+  Page(id: "597d4a8e-baaa-4e5a-8712-7ebc55314e11") {
+    title
+    page_header {
+      title
+      text
+      image {
+        url
+        height
+        width
+      }
+    }
+  }
+}

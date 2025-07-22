@@ -1,0 +1,30 @@
+V As a user, I want to be able to easily navigate through the website so that I can quickly find the right content.
+    V Header with the 2DIGITS logo which leads to the homepage
+    V Multiple links which leads to the corresponding pages
+V As a user, I want to be able to find quicklinks at the bottom of the page so that I can access relevant information.
+    V Multiple links which leads to the corresponding pages
+- As a user, I want to see a banner on the homepage so I know what the website is about.
+    - Banner with a title, description and background image
+- As a user, I want to see the latest blogs on the homepage so I know what's going on.
+    - Show the three latest blogs with a clickthrough to the blog detail page
+    - When there are no blogs found hide this block and show a message that there are no blog posts found
+- As a user, I want to be able to navigate through different blog posts on an archive page so I can see everything.
+    - Show 9 blogs on each page
+    - Able to navigate through blog posts using the pagination below the blog items
+- As a user, I want to be able to search through different blog posts on an archive page so that I can only view relevant blogs.
+    - Able to search in a text input field
+    - When searching filter the blog items on the search phrase
+- As a user, I want to be able to filter blog posts on an archive page so that I can see only relevant blogs.
+    - Only able to select only on a single filter
+    - When filtering filter the blog items with the current selected filter
+    - When clicking on "All blogs" show all the results
+- As a user, I want to be able to read a blog post so I can see what it is about.
+    - Able to read a blog article on a separate page
+    - Show a thumbnail at the top of the page
+    - Show the tags above the blog title
+    - Show a title
+    - Show the excerpt
+    - Show the blog HTML rendered on a safe way, without dangerouslySetInnerHTML
+- As a user, I want to be able to see a relevant blog post from the current blog post so I can read more information on this topic.
+    - When there are related items, show them with a maximum of 3 items
+    - When there are no items found, hide the block without a message
