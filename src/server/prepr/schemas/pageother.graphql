@@ -1,0 +1,15 @@
+query PageOther($id: String) {
+  Page(id: $id) {
+    title
+    html
+    page_header {
+      title
+      text
+      image {
+        url
+        height
+        width
+      }
+    }
+  }
+}

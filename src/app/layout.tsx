@@ -16,6 +16,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+      </head>
       <body className={`${inter.className} flex flex-col min-w-[320px] min-h-screen h-fit`}>
         <Header/>
           {children}

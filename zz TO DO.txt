@@ -1,0 +1,3 @@
+--- TO DO BEFORE HANDIN ---
+    - Update banner images by using <Image> element like in the BlogCard component
+        so that you have control over the formatting of the image.

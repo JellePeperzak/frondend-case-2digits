@@ -1,0 +1,37 @@
+query BlogBySlug($slug: String!) {
+  Blog(slug: $slug) {
+    title
+    categories {
+      body
+    }
+    banner_image {
+      url
+      height
+      width
+    }
+    content {
+      ... on Text {
+        format
+        text
+      }
+    }
+    related_blogs {
+      _id
+      title
+      _slug
+      content {
+        ... on Text {
+          text
+        }
+      }
+      banner_image {
+        url
+        width
+        height
+      }
+      categories {
+        body
+      }
+    }
+  }
+}

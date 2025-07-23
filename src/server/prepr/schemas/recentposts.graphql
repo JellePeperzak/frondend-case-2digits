@@ -1,0 +1,22 @@
+query RecentPosts {
+  Blogs(sort: publish_on_DESC) {
+    items {
+        _id
+        title
+        _slug
+        banner_image {
+            url
+            height
+            width
+        }
+        categories {
+            body
+        }
+        content {
+            ... on Text {
+            text
+            }
+        }
+    }
+  }
+}
