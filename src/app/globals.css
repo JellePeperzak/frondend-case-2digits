@@ -16,6 +16,10 @@
     - page number block (below blog grid): rgb(42, 32, 85)
 */
 
+.test {
+  color: #e1e1e1;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

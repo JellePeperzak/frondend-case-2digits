@@ -16,7 +16,7 @@ export default async function PrivacyStatement() {
         style={{ backgroundImage: `url(${Page?.page_header?.image.url})` }}
       >
         <div className="flex flex-col gap-[1em] lg:gap-[1.5em] h-full w-full bg-[black]/20 backdrop-brightness-50 px-[2em] py-[3em] lg:py-[7em]">
-          <h1 className="self-center font-bold leading-[1em] text-[30px] md:text-[50px] lg:text-[72px] uppercase w-[20rem] md:w-[30rem] lg:w-[44rem]">{Page?.page_header?.title}</h1>
+          <h1 className="self-center font-bold leading-[1em] text-[30px] md:text-[50px] lg:text-[72px] w-fit">{Page?.page_header?.title}</h1>
         </div>
       </div>
       <div className="my-[2rem] mx-[1rem] md:my-[5rem] md:mx-[5rem] lg:ml-[calc(10rem+5%)] lg:w-[45rem] xl:w-[55rem]">

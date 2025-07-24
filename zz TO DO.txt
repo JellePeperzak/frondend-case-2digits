@@ -1,3 +1,5 @@
 --- TO DO BEFORE HANDIN ---
     - Update banner images by using <Image> element like in the BlogCard component
         so that you have control over the formatting of the image.
+    - Implement on-click in hamburger menu so that if a link is clicked, the drop-down goes away.
+    - Blog navigation button navigates to /blog/blog, /blog/terms-and-conditions, etc. from an individual blog page
