@@ -1,4 +1,5 @@
 import { PreprSdk } from '@/server/prepr';
+import Image from 'next/image';
 
 import BlogCard from '@/components/blogCard/blogCard';
 
@@ -14,11 +15,15 @@ export default async function BlogPost({ params }: BlogPostProps) {
 
   return (
     <main className="flex flex-col">
-      {/* I couldn't find a pretty banner image for the blog posts like in the design, so I opted to use the header images that are way too small */}
-      <div
-        className="h-[14rem] md:h-[20rem] w-full bg-cover bg-center max-h-screen overflow-hidden"
-        style={{ backgroundImage: `url(${Blog?.banner_image.url})` }}
-      />
+      <div className="flex w-full h-[10rem] md:h-[20rem]">
+        <Image 
+            src={Blog?.banner_image.url ?? ''}
+            alt="Blog post thumbnail"
+            className="absolute z-0 object-cover object-[center_25%] h-[10rem] md:h-[20rem] w-full"
+            width={Blog?.banner_image.width}
+            height={Blog?.banner_image.height}
+        />
+      </div>
       <div className="my-[2rem] mx-[1rem] md:my-[5rem] md:mx-[5rem] lg:ml-[calc(10rem+5%)] lg:w-[45rem] xl:w-[55rem]">
         <div className="bg-[#E9EBF4] w-fit rounded-[4px] py-[0.75em] px-[1em] text-[12px] uppercase font-medium">{Blog?.categories[0]?.body}</div>
         <h1 className="text-[30px] lg:text-[40px] xl:text-[48px] font-bold mb-6">{Blog?.title}</h1>

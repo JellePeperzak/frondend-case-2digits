@@ -23,7 +23,7 @@ export default function ArchiveGrid({ Blogs }: ArchiveGridProps) {
         // Filter blogs based on provided search query and selected category
         if (Blogs) {
             setCurrentPage(1)
-            const filteredBlogs = Blogs?.items.filter(blog => 
+            const filteredBlogs = Blogs.items.filter(blog => 
                 (selectedCategory === blog?.categories?.[0]?.body || selectedCategory === "all_blogs") &&
                 blog?.title.toLowerCase().includes(searchQuery.toLowerCase())
             );
@@ -77,13 +77,13 @@ export default function ArchiveGrid({ Blogs }: ArchiveGridProps) {
                         id="blogSearch"
                         name="blogSearch"
                         type="text"
-                        aria-label="Search for blogs"
-                        placeholder="Search for blogs"
+                        aria-label="Search for blog title"
+                        placeholder="Search for blog title"
                         value={tempQuery}
                         onChange={e => setTempQuery(e.target.value)}
                     />
                     <button 
-                        className="text-[13px] md:text-[15px] bg-[#FFFFFF] hover:bg-[#e1e1e1] font-semibold border-2 border-[#141414] rounded-[3px] py-[0.5rem] px-[1rem]"
+                        className="text-[13px] md:text-[15px] bg-[#FFFFFF] hover:bg-[#e1e1e1] font-semibold border-2 border-[#141414] rounded-[3px] py-[0.5rem] px-[1em] lg:px-[2em]"
                         type="submit"
                         aria-label="Submit search"
                         onClick={handleQueryClick}
@@ -159,21 +159,36 @@ export default function ArchiveGrid({ Blogs }: ArchiveGridProps) {
                             })}
                             {(filteredBlogs && filteredBlogs.length > 0) && (
                                 <div className="col-span-1 md:col-span-2 xl:col-span-3 flex gap-[8px] align-center justify-center">
-                                    <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>←</button>
+                                    {currentPage !== 1 && 
+                                        // Used < sign because react-icons is not in the list of dependencies
+                                        <button 
+                                            onClick={() => setCurrentPage(currentPage - 1)}
+                                            className="flex items-center justify-center w-[40px] h-[40px] font-bold text-[30px] text-[#8c8c8c]"
+                                        >＜</button>
+                                    }
                                     {visiblePageNumbers.map((num, i) => (
                                         <React.Fragment key={`pagenumber-${i}`}>
-                                            {(num === currentPage - 1 && num > 2) && <p className="text-[black]">...</p> }
+                                            {(num === currentPage - 1 && num > 2) && 
+                                                <p className="flex items-center justify-center w-[40px] h-[40px] font-medium text-[15px] text-[black]">...</p>
+                                            }
                                             <button
-                                            onClick={() => setCurrentPage(num)}
-                                            className={`w-[40] h-[40] font-semibold text-[15px] ${num === currentPage ? 'text-[white] bg-[#2B1E57]' : 'text-[black]'}`}
+                                                onClick={() => setCurrentPage(num)}
+                                                className={`w-[40] h-[40] font-medium text-[15px] ${num === currentPage ? 'text-[white] bg-[#2B1E57] rounded-[4px]' : 'text-[black]'}`}
                                             >
                                             {num}
                                             </button>
-                                            {(num === currentPage + 1 && totalPages && num < totalPages - 1) && <p className="text-[black]">...</p> }
+                                            {(num === currentPage + 1 && totalPages && num < totalPages - 1) && 
+                                                <p className="flex items-center justify-center w-[40px] h-[40px] font-medium text-[15px] text-[black]">...</p> 
+                                            }
                                         </React.Fragment>
                                         
                                     ))}
-                                    <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>→</button>
+                                    {currentPage !== totalPages && 
+                                        <button 
+                                            onClick={() => setCurrentPage(currentPage + 1)}
+                                            className="flex items-center justify-center w-[40px] h-[40px] font-bold text-[30px] text-[#8c8c8c]"
+                                        >＞</button>
+                                    }
                                 </div>
                             )}
                         </div>

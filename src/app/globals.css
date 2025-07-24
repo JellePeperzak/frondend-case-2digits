@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-  --- COLOR CODES ---
-    - background: #FFFFFF / white
-    - footer: linear gradient #2B1E57 -> #141414 
-    - text (black): #141414
-    - text (purple): #762BFF
-    - blog category card: rgb(233, 235, 243)
-    - search bar section background: rgb(233, 235, 243)
-    - search bar border: rgb(211, 211, 211)
-    - blog category selector border: rgb(237, 237, 237)
-    - selected blog category background: #762BFF
-    - page number block (below blog grid): rgb(42, 32, 85)
-*/
-
-.test {
-  color: #e1e1e1;
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

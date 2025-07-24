@@ -10,7 +10,7 @@ export default async function Footer() {
             item?.link_to_page[0]?._slug && 
                 <Link 
                 key={`Footernav-${item?.link_to_page[0]?.title}`} 
-                href={item?.link_to_page[0]?._slug}
+                href={`/${item?.link_to_page[0]?._slug}`}
                 className="self-center"
                 >
                 {item?.link_to_page[0]?.title}

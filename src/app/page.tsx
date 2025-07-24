@@ -1,4 +1,5 @@
 import { PreprSdk } from '@/server/prepr';
+import Image from 'next/image';
 
 import BlogCard from '@/components/blogCard/blogCard';
 
@@ -8,13 +9,17 @@ export default async function Home() {
 
   return (
     <main className="flex-grow flex flex-col gap-[2rem] w-full">
-      <div
-        className="h-fit w-full flex flex-col self-center items-center justify-center text-white text-center bg-cover bg-center max-h-screen overflow-hidden"
-        style={{ backgroundImage: `url(${Page?.page_header?.image.url})` }}
-      >
-        <div className="flex flex-col gap-[1em] lg:gap-[1.5em] h-full w-full bg-[black]/20 backdrop-brightness-50 px-[2em] py-[3em] lg:py-[7em]">
-          <h1 className="self-center font-bold leading-[1em] text-[30px] md:text-[50px] lg:text-[72px] uppercase w-[20rem] md:w-[30rem] lg:w-[44rem]">{Page?.page_header?.title}</h1>
-          <p className="self-center text-[13px] lg:text-[16px] w-[27rem] lg:w-[50rem] max-w-[100%] font-extralight">{Page?.page_header?.text}</p>
+      <div className="flex w-full h-[15rem] md:h-[30rem]">
+        <Image 
+            src={Page?.page_header?.image.url ?? ''}
+            alt="Blog post thumbnail"
+            className="absolute z-0 object-cover object-[center_35%] h-[15rem] md:h-[30rem]"
+            width={Page?.page_header?.image.width}
+            height={Page?.page_header?.image.height}
+        />
+        <div className="flex flex-col justify-center gap-[1em] lg:gap-[1.5em] h-full w-full bg-[black]/20 backdrop-brightness-50">
+          <h1 className="self-center text-center text-[white] font-bold leading-[1em] uppercase text-[30px] md:text-[50px] lg:text-[72px] w-[20rem] md:w-[30rem] lg:w-[44rem]">{Page?.page_header?.title}</h1>
+          <p className="self-center text-center text-[13px] text-[white] lg:text-[16px] w-[27rem] md:w-[32rem] lg:w-[50rem] max-w-[100%] font-extralight px-[2em]">{Page?.page_header?.text}</p>
         </div>
       </div>
       <div className="flex flex-col items-start w-fit mx-auto gap-4 pb-[2rem]">

@@ -46,7 +46,7 @@ export default function HeaderClient({ menuItem }: HeaderProps) {
 
   return (
     <header 
-        className="sticky h-fit w-full top-0 z-50 text-[16px] lg:text-[18px] bg-white"
+        className="sticky h-fit w-full top-0 z-50 text-[16px] lg:text-[18px] bg-white lg:px-[5rem] xl:px-[10rem]"
         ref={headerRef}>
       <nav className="relative h-[64px] lg:h-[72px] flex justify-between px-[1em] py-[1em]">
         <Link href="/" aria-label="Navigate to Home page">
@@ -79,8 +79,13 @@ export default function HeaderClient({ menuItem }: HeaderProps) {
         <ul className="hidden peer-checked:flex peer-checked:border-t flex-col absolute top-[64px] left-0 w-full bg-white lg:border-none lg:flex lg:flex-row lg:static lg:shadow-none lg:gap-y-0 lg:py-0 lg:w-fit">
             <li className="leading-[3em] border-b px-[2em] text-start content-center lg:border-0 lg:leading-[1.5] lg:py-0">
                 <Link 
-                    href={menuItem?.link_to_page[0]?._slug ?? '/blog'}    // hardcoded alternative because 'undefined' is allowed by typescript
-                    className="self-center font-bold"
+                    href={`/${menuItem?.link_to_page[0]?._slug}`}
+                    className="self-center font-semibold"
+                    onClick={() => {
+                      if (hamburgerRef.current) {
+                        hamburgerRef.current.checked = false;
+                      }
+                    }}
                 >
                     {menuItem?.link_to_page[0]?.title ?? 'Blog'}
                 </Link>
